@@ -1,0 +1,51 @@
+{>layout/}
+
+<style>
+body {
+    background-color: #000;
+}
+h1 {
+    color: #9E5DF0;
+}
+.Excellent { background-color: #E8110F; }
+.AboveAverage { background-color: #85C1F5; }
+.Average { background-color: #FBC723; }
+.Fail { background-color: #E96D63; }
+
+.FancyBox {
+    border: none;
+    width: 25%;
+    word-wrap: break-word;
+}
+</style>
+
+{<content}
+    <section id="content" class="Fz-s Pstart-10">
+        <h1>Websites</h1>
+        {#sites}
+             {@if cond="{o} >= 90"  }
+                <div class="M-4 P-4 D-ib Pend-10 FancyBox Excellent">
+             {/if}
+
+             {@if cond="{o} < 90 && {o} >= 80"  }
+                <div class="M-4 P-4 D-ib Pend-10 FancyBox AboveAverage">
+             {/if}
+
+             {@if cond="{o} < 80 && {o} >= 70"  }
+                <div class="M-4 P-4 D-ib Pend-10 FancyBox Average">
+             {/if}
+
+             {@if cond="{o} < 70"  }
+                <div class="M-4 P-4 D-ib Pend-10 FancyBox Fail">
+             {/if}
+
+                <ul>
+                    <li class="M-2">{u}</li>{~n}
+                    <li class="M-2">Grade: <span class="Fw-b">{o}</span></li>{~n}
+                    <li class="M-2">Request: {r}</li>{~n}
+                    <li class="M-2">PLT: {lt}</li>{~n}
+                </ul>
+            </div>
+        {/sites}
+    </section>
+{/content}

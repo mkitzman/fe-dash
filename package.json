@@ -1,0 +1,26 @@
+{
+  "name": "fe-dash",
+  "description": "Frontend Performance Dashboard",
+  "main": "app.js",
+  "author": "Mike Kitzman <mikekitzman@yahoo.com>",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mkitzman/fe-dash"
+  },
+  "dependencies": {
+    "dustjs-linkedin": "*",
+    "dustjs-helpers": "*",
+    "consolidate": "*",
+    "express": "*",
+    "grunt": "~0.4.4",
+    "grunt-yslow": "0.0.3",
+    "grunt-phantomas": "~0.10.0",
+    "grunt-yslow-test": "~0.1.0",
+    "grunt-pagespeed": "*"
+  },
+  "devDependencies": {
+    "cron": "*"
+  }
+}

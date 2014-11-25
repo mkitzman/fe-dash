@@ -1,0 +1,15 @@
+{>layout/}
+
+<style>
+body {
+    background-color: #000;
+    color: #FFF;
+    font-size: 12px;
+}
+</style>
+
+{<content}
+    <pre>
+        {page_speed_results}
+    </pre>
+{/content}

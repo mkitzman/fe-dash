@@ -1,0 +1,7 @@
+{>layout/}
+{<content}
+    <section id="content" class="Fz-m Pstart-10 Ta-c">
+        <h1>Page Not Found. Go to <a href="/dashboard">Dashboard</a></h1>
+        <img src="http://fullscalesports.com/wp-content/uploads/2013/10/65068-Tom-Brady-sad-sitting-rQ2S.jpeg">
+    </section>
+{/content}

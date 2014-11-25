@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <link rel="stylesheet" href="https://s.yimg.com/os/mit/td/stencil-0.1.52/stencil-css/stencil-css-min.css" >
+         <script src="http://yui.yahooapis.com/3.15.0/build/yui/yui-min.js"></script>
+         <script>
+            YUI().use("node", function (Y) {
+
+                var onClick = function(e) {
+
+                    if(!e.currentTarget.get('target')) {
+                        
+                        e.preventDefault();
+
+                        //Nav Select
+                        e.currentTarget.get('parentNode').get('parentNode').one('li.Selected').removeClass('Selected'); 
+                        e.currentTarget.get('parentNode').addClass('Selected');
+
+                        //Update Iframe
+                        Y.one('#content').set('src', e.currentTarget.get('href') );
+
+                    }
+                }
+
+                Y.one('.FilterBar').delegate('click', onClick, 'a');
+            });
+        </script>
+
+        <style type="text/css">
+            iframe {
+                border: none;
+                width: 100%;
+                height: 1000px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="Fz-l Pstart-10"><b>FE Performance Dashboard</b> <span class="Fz-s">(Last Updated: {last_modified})</span></h1>
+        
+            <ul class='Fz-m FilterBar Whs-n'>
+                <li class='Grid-U Selected'>
+                    <a href='/chart'>Stat Charts</a>
+                </li>
+                <li class='Grid-U'>
+                    <a href='/yslow'>YSlow</a>
+                </li>
+                <li class='Grid-U'>
+                    <a href='/pagespeed'>Pagespeed</a>
+                </li>               
+            </ul>
+        </header>
+
+        <iframe id="content" src="http://localhost:3000"></iframe>
+    </body>
+</html>

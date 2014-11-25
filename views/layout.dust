@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yslow Performance Results</title>
+        <link rel="stylesheet" href="https://s.yimg.com/os/mit/td/stencil-0.1.52/stencil-css/stencil-css-min.css" >
+    </head>
+    <body>
+        {+content}
+        {/content}
+    </body>
+</html>
