@@ -2,7 +2,15 @@
 <html>
     <head>
         <title>Yslow Performance Results</title>
-        <link rel="stylesheet" href="https://s.yimg.com/os/mit/td/stencil-0.1.52/stencil-css/stencil-css-min.css" >
+        <style>
+        html {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 62.5%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-rendering: optimizeLegibility;
+        }
+        </style>
     </head>
     <body>
         {+content}

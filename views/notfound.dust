@@ -1,6 +1,15 @@
 {>layout/}
+<style>
+section {
+    padding-start: 10px;
+    text-align: center;
+}
+section h1 {
+    font-size: 3.2rem;
+}
+</style>
 {<content}
-    <section id="content" class="Fz-m Pstart-10 Ta-c">
+    <section>
         <h1>Page Not Found. Go to <a href="/dashboard">Dashboard</a></h1>
         <img src="http://fullscalesports.com/wp-content/uploads/2013/10/65068-Tom-Brady-sad-sitting-rQ2S.jpeg">
     </section>

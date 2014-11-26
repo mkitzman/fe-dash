@@ -1,56 +1,90 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <link rel="stylesheet" href="https://s.yimg.com/os/mit/td/stencil-0.1.52/stencil-css/stencil-css-min.css" >
-         <script src="http://yui.yahooapis.com/3.15.0/build/yui/yui-min.js"></script>
-         <script>
-            YUI().use("node", function (Y) {
-
-                var onClick = function(e) {
-
-                    if(!e.currentTarget.get('target')) {
-                        
-                        e.preventDefault();
-
-                        //Nav Select
-                        e.currentTarget.get('parentNode').get('parentNode').one('li.Selected').removeClass('Selected'); 
-                        e.currentTarget.get('parentNode').addClass('Selected');
-
-                        //Update Iframe
-                        Y.one('#content').set('src', e.currentTarget.get('href') );
-
-                    }
-                }
-
-                Y.one('.FilterBar').delegate('click', onClick, 'a');
-            });
-        </script>
-
         <style type="text/css">
+            html {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 62.5%;
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                text-rendering: optimizeLegibility;
+            }
             iframe {
                 border: none;
                 width: 100%;
                 height: 1000px;
             }
+            h1 {
+                font-size: 1.8rem;
+                font-weight: normal;
+                padding-left: 10px;
+            }
+            h1 span {
+                font-size: 1.3rem;
+            }
+            nav {
+                background: #F49313;
+                font-size: 1rem;
+                white-space: normal;   
+            }
+            ul {
+                padding: .5em 0 .5em 1.4em;
+            }
+            nav li {
+                display: inline-block;
+                zoom: 1;
+                letter-spacing: normal;
+                margin-right: 10px;
+                word-spacing: normal;
+                text-rendering: auto;
+                vertical-align: top;
+            }
+            nav a {
+                color: #fff;
+                font-size: 1.5rem;
+                text-decoration: none;
+            }
+            a.Selected {
+                font-weight: bold;
+                color: #000;
+            }
         </style>
     </head>
     <body>
         <header>
-            <h1 class="Fz-l Pstart-10"><b>FE Performance Dashboard</b> <span class="Fz-s">(Last Updated: {last_modified})</span></h1>
-        
-            <ul class='Fz-m FilterBar Whs-n'>
-                <li class='Grid-U Selected'>
-                    <a href='/chart'>Stat Charts</a>
-                </li>
-                <li class='Grid-U'>
-                    <a href='/yslow'>YSlow</a>
-                </li>
-                <li class='Grid-U'>
-                    <a href='/pagespeed'>Pagespeed</a>
-                </li>               
-            </ul>
+            <h1>FE Performance Dashboard <span>(Last Updated: {last_modified})</span></h1>
+            
+            <nav id="Nav">
+                <ul>
+                    <li><a class="Selected" href='/chart'>Stat Charts</a></li>
+                    <li><a href='/yslow'>YSlow</a></li>
+                    <li><a href='/pagespeed'>Pagespeed</a></li>               
+                </ul>
+            </nav>
         </header>
 
-        <iframe id="content" src="http://localhost:3000"></iframe>
+        <iframe id="Iframe" src="http://localhost:3000"></iframe>
     </body>
+    <script type="text/javascript">
+        //Update Iframe when nav item is clicked
+        document.getElementById('Nav').addEventListener('click', function (e) {
+                
+            if (e.target.tagName === 'A') {
+                    
+                e.preventDefault();
+                
+                //Remove all the currently selected nav items
+                [].forEach.call(document.querySelectorAll('#Nav a'), function (el) {
+                    el.classList.remove('Selected');
+                });
+
+                //Update iframe source with the url of the link clicked
+                document.getElementById('Iframe').setAttribute("src", e.target.getAttribute('href'));
+
+                //Add Selected class to clicked nav item
+                e.target.classList.add('Selected');
+
+                }
+            }, false);
+        </script>
 </html>
