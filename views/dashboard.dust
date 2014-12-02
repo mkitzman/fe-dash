@@ -73,10 +73,10 @@
                     
                 e.preventDefault();
                 
-                //Remove all the currently selected nav items
-                [].forEach.call(document.querySelectorAll('#Nav a'), function (el) {
-                    el.classList.remove('Selected');
-                });
+                var nav_items = document.querySelectorAll('#Nav a');
+                for (i = 0; i < nav_items.length; ++i) {
+                    nav_items[i].classList.remove('Selected');
+                }
 
                 //Update iframe source with the url of the link clicked
                 document.getElementById('Iframe').setAttribute("src", e.target.getAttribute('href'));
