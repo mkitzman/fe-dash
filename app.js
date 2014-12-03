@@ -1,3 +1,4 @@
+/*global require, console */
 var express = require("express"),
     http    = require("http"),
     fs      = require('fs'),
@@ -7,7 +8,7 @@ var express = require("express"),
     app     = express();
 
 //Turn off Dust white space suppression so JS in template exectutes
-dust.optimizers.format = function(ctx, node) { return node };
+dust.optimizers.format = function(ctx, node) { return node; };
 
 app.set('view engine', 'dust');
 app.set('views', __dirname + '/views');

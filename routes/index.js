@@ -1,8 +1,14 @@
+/*global module, require */
 module.exports = function (app) {
+
+    'use strict';
 
     //Dashboard Page
     app.get('/dashboard', function (req, res) {
 
+        //To view the static files created we need to do this in app.js: app.use(express.static(__dirname + '/public'));
+        //Unfortunatly Phantomas automaticaly creates an index.html file which means / will automatically load that
+        //So using / in routes does nothing
         var fs = require('fs');
 
         fs.stat('public/index.html', function(err, data) {
@@ -30,7 +36,7 @@ module.exports = function (app) {
 
         fs.readFile('public/pagespeed.html', 'utf-8', function(err, data) { 
             res.render('pagespeed', {
-                 "page_speed_results" : data,
+                 "page_speed_results" : data
                 }
             );
 
@@ -71,7 +77,7 @@ module.exports = function (app) {
                     sites_array.push(json_string);
                     
                     if (count === files.length) {
-                        res.render('index', {
+                        res.render('yslow', {
                              "sites" : sites_array
                             }
                         );
