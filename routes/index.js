@@ -1,4 +1,6 @@
 /*global module, require */
+var sites_config = require('../configs/sites.js');
+
 module.exports = function (app) {
 
     'use strict';
@@ -48,12 +50,8 @@ module.exports = function (app) {
 
         var fs = require('fs'),
 
-                files = [ 'public/michaelkitzman.json',
-                          'public/dunkfu.json',
-                          'public/stormdestroyer.json',
-                          'public/lastknownphoto.json'
-                ],
-                count           = 0,
+                files         = sites_config.yslow_reports,
+                count         = 0,
                 sites_array   = [],
                 json_string,
                 test_url,

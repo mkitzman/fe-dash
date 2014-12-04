@@ -1,3 +1,5 @@
+var sites_config    = require('./configs/sites.js');
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
@@ -31,7 +33,7 @@ module.exports = function(grunt) {
                         'Dom Tests' : ['DOMqueries','DOMqueriesById', 'DOMqueriesByClassName', 'DOMqueriesByTagName', 'DOMqueriesByQuerySelectorAll', 'DOMinserts', 'DOMqueriesDuplicated']
                 },
                 indexPath            : './public/',
-                url                  : 'http://michaelkitzman.com',
+                url                  : sites_config.phantomas,
                 numberOfRuns         : 10,
                 options   : {
                   'film-strip'   : false
@@ -45,18 +47,8 @@ module.exports = function(grunt) {
             options: {
               info: "basic",
               format: "json",
-              urls: [ 
-                'http://michaelkitzman.com',
-                'http://dunkfu.com',
-                'http://stormdestroyer.com',
-                'http://lastknownphoto.com'
-              ],
-              reports: [
-                'public/michaelkitzman.json',
-                'public/dunkfu.json',
-                'public/stormdestroyer.json',
-                'public/lastknownphoto.json'
-              ]
+              urls: sites_config.yslow_urls,
+              reports: sites_config.yslow_reports
             },
             your_target: {
               files: []
@@ -65,11 +57,11 @@ module.exports = function(grunt) {
         pagespeed: {
             options: {
                 nokey: true,
-                url: "http://michaelkitzman.com"
+                url: sites_config.page_speed
             },
             prod: {
                 options: {
-                    url: "http://michaelkitzman.com",
+                    url: sites_config.page_speed,
                     locale: "en_US",
                     strategy: "desktop",
                     threshold: 80
