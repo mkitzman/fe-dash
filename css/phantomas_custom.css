@@ -1,0 +1,36 @@
+/* Custom Chart Styles here */
+/*
+body,
+main,
+.p--header {
+    background-color: #fff;
+}
+h1, h2, h3, h4, h5, a,
+.p--graphs--description, 
+.p--graphs--experimental, 
+.p--graphs--warning,
+.p--graphs--detailBox,
+.p--graphs--button__expand, 
+.p--graphs--button__offenders,
+.p--graphs--descriptionBtn.active,
+.lineChart--xAxis .tick text {
+    background-color: #fff;
+    color: #000;
+}
+.p--lineChart--areaLine {
+    stroke: #f49313;
+}
+.p--graphs--graph {
+    border-bottom: 1px solid #9E5DF3;
+}
+.p--graphs li {
+    background-color: #dfdfdf;
+}
+.p--lineChart--area {
+    fill: rgba(244,147,19, 0.5);
+}
+.lineChart--circle {
+    fill: #f48024;
+    stroke: #f49313;
+}
+*/

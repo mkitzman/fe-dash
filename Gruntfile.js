@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         phantomas: {
             michaelkitzman : {
               options : {
-                additionalStylesheet : './css/phantomas_chart.css',
+                additionalStylesheet : './public/css/phantomas_custom.css',
                 assertions : {
                   'assetsWithQueryString' : 3,
                   'biggestLatency'        : 1400,
