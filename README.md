@@ -1,7 +1,7 @@
 #fe-dash
 ### Front End Performance Dashboard
 
-Runs yslow and phantomas and pagespeed tests via a grunt task to measure front end performance metrics. The returned metrics are then visualized and viewable in terminal directly or via a dashboard page running on express located at http://server:3000/dashboard
+Run a set of grunt tasks ( yslow and phantomas and pagespeed ) to measure front end performance metrics. The returned metrics are then visualized and viewable in terminal directly or via a dashboard page running on express located at http://server:3000/dashboard
 
 
 Set Up:
